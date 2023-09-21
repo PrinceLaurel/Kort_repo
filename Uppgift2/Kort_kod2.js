@@ -18,3 +18,11 @@ let deck = [];
 }
 shuffle(deck);
 console.log(deck);
+
+function dealCards(deck) {
+    return deck.splice(0);
+}
+let playerhand = deck[1, 2, 3, 4, 5];
+for (let i = 0; i < playerhand.length; i++) {
+    console.log(playerhand[i]);
+}
