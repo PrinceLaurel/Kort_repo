@@ -19,11 +19,10 @@ let deck = [];
 shuffle(deck);
 console.log(deck);
 
-function dealCards(deck) {
-    return deck.splice(0);
+function dealCards(deck, numCardsPerHand) {
+    return deck.splice(0, numCardsPerHand);
 }
-let playerhand = dealCards(deck);
-let player2hand = dealCards(deck);
-for (let i = 0; i < 5; i++) {
-    console.log(`player1:${playerhand[i]} player2:${player2hand[i]}`);
-}
+let playerhand = dealCards(deck, 5);
+let player2hand = dealCards(deck, 5);
+console.log(`Player1 hand: ${playerhand}`);
+console.log(`Player2 hand: ${player2hand}`);
