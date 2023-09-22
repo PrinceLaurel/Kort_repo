@@ -26,3 +26,12 @@ let playerhand = dealCards(deck, 5);
 let player2hand = dealCards(deck, 5);
 console.log(`Player1 hand: ${playerhand}`);
 console.log(`Player2 hand: ${player2hand}`);
+
+function findCard(playerhand) {
+    if (playerhand.includes("H-K")) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+}
+findCard(playerhand);
