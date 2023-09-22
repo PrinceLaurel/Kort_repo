@@ -35,3 +35,17 @@ function findCard(playerhand) {
     }
 }
 findCard(playerhand);
+
+function compareHands(deck, hands) {
+    return hands.filter(deck => deck.includes("D"));
+    let hand1 = dealCards(deck, 5);
+    let hand2 = dealCards(deck, 5);
+    if (hand1.includes("D") > hand2.includes("D")) {
+        console.log("hand1 have more dia cards");
+    } else if (hand1.includes("D") < hand2.includes("D")) {
+        console.log("hand2 have more dia cards")
+    } else {
+        console.log("same amount of dia cards");
+    }
+}
+compareHands(hand1, hand2);
