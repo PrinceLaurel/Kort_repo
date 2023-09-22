@@ -2,7 +2,6 @@ let suits = ["C", "D", "H", "S"];
 let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 let deck = [];
 
-
     for (let suit of suits) {
         for (let value of values) {
             deck.push(`${suit}-${value}`);
@@ -36,16 +35,20 @@ function findCard(playerhand) {
 }
 findCard(playerhand);
 
-function compareHands(deck, hands) {
-    return hands.filter(deck => deck.includes("D"));
-    let hand1 = dealCards(deck, 5);
-    let hand2 = dealCards(deck, 5);
-    if (hand1.includes("D") > hand2.includes("D")) {
-        console.log("hand1 have more dia cards");
-    } else if (hand1.includes("D") < hand2.includes("D")) {
-        console.log("hand2 have more dia cards")
-    } else {
-        console.log("same amount of dia cards");
-    }
+function containsCard(hand, card) {
+    return hand.includes(card);
 }
-compareHands(hand1, hand2);
+
+function compareHands(hand) {
+    return hand.filter(card => card.includes("D")).length;
+}
+let diaPlayer1 = compareHands(playerhand);
+let diaPlayer2 = compareHands(player2hand);
+
+if (diaPlayer1 > diaPlayer2) {
+    console.log("player1 have more diamond cards");
+} else if (diaPlayer1 < diaPlayer2) {
+    console.log("player2 have more diamond cards")
+} else {
+    console.log("both have the same amount of diamond cards");
+}
